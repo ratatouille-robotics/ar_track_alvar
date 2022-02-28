@@ -101,6 +101,10 @@ add_executable(individualMarkers nodes/IndividualMarkers.cpp)
 target_link_libraries(individualMarkers ${PROJECT_NAME} kinect_filtering ${catkin_LIBRARIES})
 add_dependencies(individualMarkers ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(individualMarkersTest nodes/TestIndividualMarkers.cpp)
+target_link_libraries(individualMarkersTest ${PROJECT_NAME} kinect_filtering ${catkin_LIBRARIES})
+add_dependencies(individualMarkersTest ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 add_executable(individualMarkersNoKinect nodes/IndividualMarkersNoKinect.cpp)
 target_link_libraries(individualMarkersNoKinect ${PROJECT_NAME} ${catkin_LIBRARIES})
 add_dependencies(individualMarkersNoKinect ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -121,7 +125,7 @@ add_executable(createMarker src/SampleMarkerCreator.cpp)
 target_link_libraries(createMarker ${PROJECT_NAME} ${catkin_LIBRARIES})
 add_dependencies(createMarker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-install(TARGETS ${PROJECT_NAME} createMarker findMarkerBundles findMarkerBundlesNoKinect individualMarkers individualMarkersNoKinect kinect_filtering medianFilter trainMarkerBundle
+install(TARGETS ${PROJECT_NAME} createMarker findMarkerBundles findMarkerBundlesNoKinect individualMarkers individualMarkersTest individualMarkersNoKinect kinect_filtering medianFilter trainMarkerBundle
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

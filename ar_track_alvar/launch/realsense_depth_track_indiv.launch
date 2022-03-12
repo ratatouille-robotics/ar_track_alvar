@@ -17,4 +17,7 @@
 		<remap from="camera_info"   to="$(arg cam_info_topic)" />
 	</node>
 
+	<node pkg="tf2_ros" type="static_transform_publisher" name="camera_link_broadcaster"
+		args="-0.00561371 0.092456 -0.0503131 -0.50246 -0.528849 -0.435098 0.527771 tool0 camera_link" />
+
 </launch>

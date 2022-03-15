@@ -1,8 +1,8 @@
 See [ROS wiki](http://wiki.ros.org/ar_track_alvar) for the users document.
 
 To run the tracking using a RealSense camera, we need:
- - The RealSense ROS Wrapper (built from source)
- - The ros-noetic-rgbd-launch package
+ - The RealSense ROS Wrapper (built from source) or from Ubuntu packages (Package name `realsense2_ros`)
+ - The ros-noetic-rgbd-launch package - Publishes RGBD data to a predefined ROS topic. (topic name: `/camera/depth_registered/points`)
  - Printed AR tags of known dimensions, RealSense camera
  - This repository
  

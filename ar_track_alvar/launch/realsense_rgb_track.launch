@@ -3,8 +3,13 @@
 	<arg name="max_new_marker_error" default="0.08" />
 	<arg name="max_track_error" default="0.2" />
 	<arg name="cam_image_topic" default="/camera/color/image_raw" />
-	<arg name="cam_info_topic" default="/camera/color/camera_info" />
+	<arg name="cam_info_topic" default="/corrected_camera_info" />
 	<arg name="output_frame" default="/camera_link" />
+	<arg name="corrected_calib" default="/home/ratatouille/catkin_ws/src/calibration/yaml/ost.yaml"/>
+
+	<node name="corrected_calibration" pkg="calibration" type="corrected_calibration.py">
+		<param name="filename"	type="string" value="$(arg corrected_calib)" />
+	</node>
 
 	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
 		<param name="marker_size"           type="double" value="$(arg marker_size)" />
@@ -17,6 +22,6 @@
 	</node>
 
 	<node pkg="tf2_ros" type="static_transform_publisher" name="camera_link_broadcaster"
-		args="-0.00561371 0.092456 -0.0503131 -0.50246 -0.528849 -0.435098 0.527771 tool0 camera_link" />
+		args="0.0 0.0996 0.085 0 0 0.707 0.707 wrist_2_link camera_link" />
 
 </launch>

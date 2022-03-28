@@ -22,6 +22,6 @@
 	</node>
 
 	<node pkg="tf2_ros" type="static_transform_publisher" name="camera_link_broadcaster"
-		args="0.0 0.0996 0.085 0 0 0.707 0.707 wrist_2_link camera_link" />
+		args="0.0180981 0.0886255 0.0140553   0.522154 0.523293 0.478812 -0.47356 tool0 camera_link" />
 
 </launch>

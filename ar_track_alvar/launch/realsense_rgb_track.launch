@@ -5,9 +5,9 @@
 	<arg name="cam_image_topic" default="/camera/color/image_raw" />
 	<arg name="cam_info_topic" default="/corrected_camera_info" />
 	<arg name="output_frame" default="/camera_link" />
-	<arg name="corrected_calib" default="$(find calibration)/yaml/ost.yaml"/>
+	<arg name="corrected_calib" default="$(find ratatouille_pose_estimation)/yaml/ost.yaml"/>
 
-	<node name="corrected_calibration" pkg="calibration" type="corrected_calibration.py">
+	<node name="corrected_calibration" pkg="ratatouille_pose_estimation" type="corrected_calibration.py">
 		<param name="filename"	type="string" value="$(arg corrected_calib)" />
 	</node>
 

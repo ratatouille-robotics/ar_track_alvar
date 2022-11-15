@@ -9,6 +9,7 @@ To run the tracking using a RealSense camera, we need:
   - `ros-noetic-realsense2-camera`
   - `ros-noetic-rgbd-launch`
   - `ros-noetic-realsense2-description`
+  - [`librealsense`](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
 - Connect Intel RealSense camera. Verify that you're able to see depth & RGB camera outputs using the `realsense-viewer` program.
 - Attach printed AR tags (of known dimensions) to the object you want to detect.
 - Clone this package to a ROS workspace
